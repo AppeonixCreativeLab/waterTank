@@ -1,0 +1,61 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>3D Water Tank</title>
+</head>
+<body>
+<style>
+.wrap{
+	font-family: Roboto;
+	text-align: center;
+}
+.tank{
+	margin:0 50px;
+	display: inline-block;
+}
+body{
+	/*background: #eee;*/
+	margin: 0;
+}
+</style>
+<div class="wrap">
+	<div class="tank waterTankHere1"></div>
+	<div class="tank waterTankHere2"></div>
+	<div class="tank waterTankHere3"></div>
+</div>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script src="./waterTank.js"></script>
+<script>
+$(document).ready(function() {
+	
+	$('.waterTankHere1').waterTank({
+		width: 420,
+		height: 360,
+		color: '#8bd0ec',
+		level: 83
+	}).on('click', function(event) {
+		$(this).waterTank(Math.floor(Math.random() * 100) + 0 );
+	});
+  
+	$('.waterTankHere2').waterTank({
+		width: 80,
+		height: 360,
+		color: '#f00',
+		level: 80
+	}).on('click', function(event) {
+		$(this).waterTank(Math.floor(Math.random() * 100) + 0 );
+	});
+  
+	$('.waterTankHere3').waterTank({
+		width: 20,
+		height: 360,
+		color: '#2e32ff',
+		level: 80
+	}).on('click', function(event) {
+		$(this).waterTank(Math.floor(Math.random() * 100) + 0 );
+	});
+
+});
+</script>
+</body>
+</html>
